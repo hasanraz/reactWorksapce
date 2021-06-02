@@ -5,20 +5,21 @@ import App from './App';
 import { createStore } from 'redux';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import  todoConst from './reducers/reducers';
+import counterReducer from './reducers/reducers';
 
 
 /**
  * Will Add state
  */
 
-let store = createStore(todoConst);
+let store = createStore(counterReducer);
 
 
 ReactDOM.render(
-  <Provider store={store}>
+ <Provider store = {store}>
     <App />
-  </Provider>,
+  </Provider>
+,
   document.getElementById('root')
 );
 

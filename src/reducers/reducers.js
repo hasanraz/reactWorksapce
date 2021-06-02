@@ -1,32 +1,16 @@
-import { combineReducers } from 'redux'
-import { ADD_ITEM } from './../actions/actions'
+//import { combineReducers } from 'redux'
 
-function todo(state, action) {
-    switch (action.type) {
-        case ADD_ITEM:
-            return {
-                id: action.id,
-                text: action.text
-            }
-        default: 
+const counterReducer = (state = 0, action) => {
+    switch(action.type) {
+        case 'INCREMENT':
+            return state + 1
+        case 'DECREMENT':
+            return state -1
+        case 'RESET':
+            return 0
+        default:
             return state
     }
 }
 
-function todo1(state = [], action) {
-    switch (action.type) {
-        case ADD_ITEM:
-            return [
-                ...state,
-                todo(undefined, action)
-            ]
-        default: 
-            return state
-    }
-}
-
-const todoConst = combineReducers({
-    todo1
-})
-
-export default todoConst
+export default counterReducer;

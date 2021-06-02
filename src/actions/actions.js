@@ -1,12 +1,19 @@
-export const ADD_ITEM = 'ADD_ITEM'
 
-let nextItemId = 0;
-
-export function addItem(text) {
+export function increment() {
     return {
-        type: ADD_ITEM,
-        id: nextItemId++,
-        text
-    };
+        type: 'INCREMENT'
+    }
+}
+
+export function decrement() {
+    return {
+        type: 'DECREMENT'
+    }
+}
+
+export function reset() {
+    return {
+        type: 'RESET'
+    }
 }
 
